@@ -1,0 +1,20 @@
+name: anatomy of github actions
+
+on: 
+  push:
+    branches:
+      - main
+      - develop
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+
+      - name: Simple task
+        run: echo "Studying anatomy of github actions"
+
