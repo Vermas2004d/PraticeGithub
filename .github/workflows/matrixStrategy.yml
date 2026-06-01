@@ -1,4 +1,4 @@
-name: Nodejs matrix test
+name: Node.js Matrix Test
 
 on: [push]
 
@@ -10,10 +10,10 @@ jobs:
         node-version: [16, 18, 20]
 
     steps:
-     - uses: actions/checkout@v4
-     - name: Use Node.js ${{ matrix.node-version }}
-       uses: actions/setup-node@v4
-       with: 
-        node-version: ${{ matrix.node-version }}
-     - run: npm install
-     - run: npm test 
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm install
+      - run: npm test
