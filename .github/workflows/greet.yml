@@ -1,0 +1,11 @@
+name: Greet on push
+
+on:
+ push:
+
+jobs: 
+  greet:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: say hello
+        run: echo 'Build started!'
