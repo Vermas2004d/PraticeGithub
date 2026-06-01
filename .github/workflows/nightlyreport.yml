@@ -1,0 +1,14 @@
+name: Nightly Report
+
+on:
+  schedule: 
+    - cron: '0 0 * * *'   #Every day at 00:00 UTC
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate Report
+        run: echo "Generating nightly report at $(date)"
+
+
