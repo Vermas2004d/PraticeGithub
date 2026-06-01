@@ -1,0 +1,17 @@
+name: Deal with main and develop
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Write something on it.."
+        run: echo "Running CI on ${{ github.ref }}"
+
+        
