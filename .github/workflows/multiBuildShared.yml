@@ -1,0 +1,37 @@
+name: Build Pipeline
+
+#check for the full folder after you complet the github actions..
+
+
+on: [push]
+
+env: 
+  APP_ENV: production   #workflow-level env var
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env: 
+      BUILD_DIR: ./dist   #Job-level env var 
+                                             
+    steps: 
+      - uses: actions/checkout@v4
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build 
+        run: npm run build 
+        env: 
+          NODE_ENV: ${{ env.APP_ENV }} 
+      
+      - name: Test
+        run: npm Test
+      
+      - name: Show build output
+        run: ls ${{ env.BUILD_DIR }}
+
+

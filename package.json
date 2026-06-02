@@ -1,0 +1,10 @@
+{
+    "name": "cached-node-build",
+    "version": "1.0.0",
+    "description": "Simple Node.js project for Github Actions",
+    "main": "src/index.js",
+    "scripts": {
+        "build": "mkdir -p dist && cp src/index.js dist/index.js"
+    }
+}
+
